@@ -8,6 +8,7 @@
 
                 Scanner scan = new Scanner(System.in);
                 int number = scan.nextInt();
+                //Тест
 
 
                 for (int a = 1; a <= number; a++){
