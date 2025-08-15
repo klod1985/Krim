@@ -5,38 +5,32 @@
 
         public class Main {
             public static void main(String[] args) {
+                int Pervoe_Chislo = 10;
+                int Vtoroe_Chislo = 142;
 
-                System.out.print("Введите трехзначное число: ");
-                Scanner scan = new Scanner(System.in);
+                int MaxChisloDelitel = 0;
+                int chislo = 0;
+                for (int peremenaya = Pervoe_Chislo; peremenaya < Vtoroe_Chislo; peremenaya++){
+                    int Deliteley_Seychas = 0;
 
-                int chislo = scan.nextInt();
-                int otric = 0;
-
-                if (chislo < 0) {
-                    otric += chislo;
-                    otric *= -1;
-
-                    if (otric < 100 || otric > 999) return;
-                    else {
-                        while (otric > 0) {
-                            System.out.print(otric % 10);
-                            otric /= 10;
+                    for (int delitel = 1;delitel <= peremenaya;delitel++){
+                        if(peremenaya % delitel == 0){
+                            Deliteley_Seychas++;
                         }
-                        System.out.print("-");
-                    }
-                } else {
-                    if (chislo < 100 || chislo > 999) return;
-                    else {
-                        while (chislo > 0) {
-                            System.out.print(chislo % 10);
-                            chislo /= 10;
-                        }
-                    }
 
+
+                    }
+                    if (Deliteley_Seychas > MaxChisloDelitel){
+                        MaxChisloDelitel = Deliteley_Seychas;
+                        chislo = peremenaya;
+                    }
 
                 }
+                System.out.println(MaxChisloDelitel);
+                System.out.println(chislo);
+                }
             }
-        }
+
 
 
         
